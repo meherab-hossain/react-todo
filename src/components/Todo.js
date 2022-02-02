@@ -2,7 +2,7 @@ import { useState } from "react";
 import Backdrop from "./Backdrop";
 import Modal from "./Modal";
 
-function Todo() {
+function Todo(props) {
   const [modalIsOpen, setModalIsOpen] = useState(false);
   function deleteHandler() {
     setModalIsOpen(true);
@@ -12,7 +12,7 @@ function Todo() {
   }
   return (
     <section className="card">
-      <header>TITLE</header>
+      <header>{props.text}</header>
       <div className="actions">
         <button className="btn" onClick={deleteHandler}>
           Delete
